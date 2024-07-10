@@ -1,0 +1,16 @@
+{
+  "name": "example-inline-component",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@nuxt-themes/typography": "^1.0.1",
+    "@nuxt/content": "latest",
+    "@nuxt/ui": "^2.11.0",
+    "nuxt": "latest"
+  }
+}

@@ -1,0 +1,290 @@
+/* Variables */
+:root {
+  --color-primary: #005c6f;
+  --color-neutral-1: #dedede;
+  --color-neutral-2: #ccc;
+  --font-family-primary: "Roboto";
+}
+
+/* Base Styles */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 10px;
+  background: white;
+  font-family: var(--font-family-primary), sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+button {
+  font-size: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 20px 5px 0;
+  border-bottom: 1px solid var(--color-neutral-2);
+  min-width: 100px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Menu */
+nav.menu {
+  padding: 20px;
+  flex: 0 0 250px;
+  border-right: 1px solid var(--color-neutral-1);
+  margin: 0;
+  min-height: 100vh;
+}
+
+nav.menu .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+nav.menu .head .site-info {
+  flex: 0 1 250px;
+}
+
+nav.menu .head .menu-button {
+  border: 1px solid var(--color-neutral-2);
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--color-primary);
+  flex: 0 0 40px;
+  display: none;
+}
+
+nav.menu .head .menu-button::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: 10px;
+  top: 14px;
+}
+
+nav.menu .head .menu-button::after {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: 10px;
+  top: 19px;
+}
+
+nav.menu .head .menu-button span.line::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: 10px;
+  top: 24px;
+}
+
+nav.menu .head .menu-button.js-expanded::before {
+  transform: rotate(45deg);
+  top: 19px;
+}
+
+nav.menu .head .menu-button.js-expanded::after {
+  transform: rotate(-45deg);
+}
+
+nav.menu .head .menu-button.js-expanded span.line::before {
+  display: none;
+}
+
+.site-name {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+nav.menu ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav.menu li > ul {
+  padding: 5px 0 0 20px;
+  display: none;
+}
+
+nav.menu li > ul.show,
+nav.menu .head + ul.show {
+  display: block;
+}
+
+nav.menu li {
+  list-style: none;
+  padding: 5px 0;
+}
+
+nav.menu ul a,
+nav.menu ul button {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+nav.menu ul button {
+  position: relative;
+  padding: 0 15px;
+  margin-left: -15px;
+}
+
+nav.menu ul button::before {
+  content: "";
+  width: 1px;
+  height: 9px;
+  background: black;
+  position: absolute;
+  left: 2px;
+  top: 3px;
+}
+
+nav.menu ul button.js-expanded::before {
+  display: none;
+}
+
+nav.menu ul button::after {
+  content: "";
+  width: 9px;
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: -2px;
+  top: 7px;
+}
+
+nav.menu ul .router-link-active {
+  color: black;
+  font-weight: bold;
+}
+
+/* MD */
+@media (max-width: 900px) {
+  nav.menu {
+    flex: 0 0 180px;
+  }
+}
+
+/* SM */
+@media (max-width: 700px) {
+  nav.menu {
+    flex-basis: auto;
+    border: none;
+    min-height: 0;
+  }
+  nav.menu img {
+    flex-basis: auto;
+    border: none;
+  }
+  nav.menu .head .menu-button {
+    display: block;
+  }
+  nav.menu .head + ul {
+    display: none;
+  }
+}
+/* End Menu */
+
+/* Content */
+.main-content {
+  padding: 50px;
+}
+
+.main-content img {
+  border: 1px solid var(--color-neutral-2);
+}
+
+/* MD */
+@media (max-width: 900px) {
+  .main-content {
+    padding: 30px;
+  }
+}
+
+/* SM */
+@media (max-width: 700px) {
+  .flex {
+    flex-direction: column;
+    gap: 0;
+  }
+  .main-content {
+    padding: 20px;
+  }
+}
